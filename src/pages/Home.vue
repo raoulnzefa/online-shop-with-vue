@@ -1,5 +1,3 @@
-  <!-- eslint-disable-next-line vue/max-attributes-per-line -->
-
 <template>
   <div>
     <div class="title">
