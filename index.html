@@ -1,29 +1,12 @@
+<!DOCTYPE html>
 <html>
-    <head></head>
-    <body>
-
-        Online-Shop build with Vue
-
-         <!-- Template -->
-         <div id="app">
-            <div>
-                <input type="text" v-model="name" placeholder="Your name?" />
-                <h5>Hello, {{name}}</h5>
-            </div>
-        </div>
-        
-        <!-- Add Vue -->
-        <script src="https://unpkg.com/vue/dist/vue.js"></script>
-        <script>
-            /* Create a Vue instance*/
-             new Vue({
-                 template: '#app',
-                 data: function() {
-                     return {
-                         name: ''
-                     }
-                 }
-             }).$mount('#app');
-         </script>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>scotch-store</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
 </html>

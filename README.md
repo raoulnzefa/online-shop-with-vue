@@ -1,39 +1,21 @@
-# online-shop-with-vue
+# scotch-store
 
-Follow tutorial on:
-https://scotch.io/courses/build-an-online-shop-with-vue
+> A Vue.js project
 
-Create local gitrepo: online-shop-with-vue
+## Build Setup
 
-Create github remote repository
-https://github.com/fong06/online-shop-with-vue
+``` bash
+# install dependencies
+npm install
 
-Add dev branch
-https://github.com/fong06/online-shop-with-vue/tree/dev
+# serve with hot reload at localhost:8080
+npm run dev
 
-Install NodeJS manually
-https://nodejs.org/
-node-v10.16.3-x64.msi
+# build for production with minification
+npm run build
 
---Open CMD
---Commandline
-npm install -g vue-cli
+# build for production and view the bundle analyzer report
+npm run build --report
+```
 
---Conflict with versions?
-
-https://github.com/vuejs/vue-cli
-
---use vue cli to create a new project and use webpack, which include vue-loadersetup, hot reload (automatic file change detection?) linting (autocheck syntax), testing, css extraction (less, sass etc. to css?)
-
-/*
-webpack: A full-featured webpack + vue-loader setup with hot reload, linting, testing & CSS extraction.
-
-webpack-simple: A simple webpack + vue-loader setup for quick prototyping.
-
-browserify: A full-featured Browserify + vueify setup with hot-reload, linting & unit testing.
-
-browserify-simple: A simple Browserify + vueify setup for quick prototyping.
-
-simple: The simplest possible Vue setup in a single HTML file.
-*/
-
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
