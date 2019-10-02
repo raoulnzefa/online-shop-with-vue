@@ -11,8 +11,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="product in products">
-              <td>{{product.name}}</td>
+            <tr v-for="product in products" :key="product">
+              <td >{{product.name}}</td>
               <td>${{product.price}}</td>
               <td>{{product.manufacturer.name}}</td>
               <td><router-link :to="'/admin/edit/'+product._id"><i class="fa fa-pencil-square-o"></i></router-link></td>
