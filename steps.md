@@ -88,3 +88,32 @@ fixed 10 of 10 vulnerabilities in 12938 scanned packages
   
   Visual STudio code plugin voor VUE
   https://github.com/vuejs/vetur
+
+
+<!-- Fix visual studio linting errors-->
+https://alligator.io/vuejs/eslint-vue-vetur/
+
+<!-- Modify settings.json for Visual studio code: -->
+<!-- 
+Windows %APPDATA%\Code\User\settings.json
+macOS $HOME/Library/Application Support/Code/User/settings.json
+Linux $HOME/.config/Code/User/settings.json
+-->
+
+  {
+    "eslint.autoFixOnSave": true,
+	"eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    }
+  ]
+}
