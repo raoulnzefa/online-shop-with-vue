@@ -7,6 +7,7 @@ import * as VeeValidate from 'vee-validate'
 
 Vue.config.productionTip = false
 Vue.use(VeeValidate)
+Vue.config.devtools = process.env.NODE_ENV === 'development'
 
 /* eslint-disable no-new */
 new Vue({
