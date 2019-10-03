@@ -64,6 +64,14 @@ nav li a i  {
   border-bottom: 2px solid #F5F5F5;
 }
 
+.admin-menu a {
+  display: block;
+  background: lightblue;
+  border: 1px solid blue;
+  color: white;
+  padding: 10px;
+}
+
 button.button {
   background: #EFDB06;
   border: 1px solid #F9E610;
