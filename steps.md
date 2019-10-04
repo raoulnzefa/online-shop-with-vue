@@ -117,3 +117,7 @@ Linux $HOME/.config/Code/User/settings.json
     }
   ]
 }
+
+
+--Install firebase
+npm install firebase --save

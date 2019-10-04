@@ -11,26 +11,25 @@ import ProductFrom from '@/components/products/ProductForm.vue'
 export default {
   data () {
     return {
-      model: {},
-      manufacturers: [
-        {
-          _id: 'sam',
-          name: 'Samsung'
-        },
-        {
-          _id: 'apple',
-          name: 'Apple'
-        }
-      ]
+      model: {}
     }
+  },
+  created () {
+    this.$store.dispatch('allManufacturers')
   },
   methods: {
     addProduct (model) {
       console.log('model', model)
+      this.$store.dispatch('addProduct', model)
     }
   },
   components: {
     'product-form': ProductFrom
+  },
+  computed: {
+    manufacturers () {
+      return this.$store.getters.allManufacturers
+    }
   }
 }
 </script>

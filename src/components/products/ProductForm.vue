@@ -93,7 +93,16 @@ export default {
   },
   methods: {
     saveProduct: function saveProduct () {
-      this.$validator.validate()
+      // console.log(this.fields.valid())
+      this.$validator.validateAll().then(() => {
+        this.$emit('save-product', this.model)
+      }).catch(() => {
+        this.$store.commit('ERROR', {
+          type: 'error',
+          title: 'Validation!',
+          content: 'Please ensure the form is valid.'
+        })
+      })
     }
   }
 }
