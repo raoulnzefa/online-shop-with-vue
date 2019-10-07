@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { productActions, manufacturers } from './actions'
-import { productMutations } from './mutations'
+import { manufacturers } from './actions'
+// import { productMutations } from './mutations'
 import { productGetters } from './getters'
+import { vuexfireMutations, firestoreAction } from 'vuexfire'
+import { db } from '../firebase'
 
 Vue.use(Vuex)
 
@@ -20,7 +22,13 @@ export default new Vuex.Store({
     // all manufacturers
     manufacturers: []
   },
-  actions: Object.assign({}, productActions),
-  mutations: Object.assign({}, productMutations),
+  mutations: vuexfireMutations,
+  // actions: Object.assign({}, productActions),
+  actions: {
+    bindProducts: firestoreAction(({ bindFirestoreRef }) => {
+      return bindFirestoreRef('products', db.collection('product'))
+    })
+  },
+  // mutations: Object.assign({}, productMutations),
   getters: Object.assign({}, manufacturers, productGetters)
 })

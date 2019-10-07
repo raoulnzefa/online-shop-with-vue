@@ -10,24 +10,36 @@ import {
 
 export const productActions = {
   addProduct ({commit}, payload) {
+    debugger
     commit(ADD_PRODUCT)
-    db.collection('product').doc('1uiDzxbdHUBzvnRxokCb').get().then(function (doc) {
-      if (doc.exists) {
-        console.log('Document data:', doc.data())
-      } else {
-        // doc.data() will be undefined in this case
-        console.log('No such document!')
-      }
-    }).catch(function (error) {
-      console.log('Error getting document:', error)
-    })
-    db.collection('product').doc().set(payload)
+    // db.collection('product').doc('1uiDzxbdHUBzvnRxokCb').get().then(function (doc) {
+    //   if (doc.exists) {
+    //     console.log('Document data:', doc.data())
+    //   } else {
+    //     // doc.data() will be undefined in this case
+    //     console.log('No such document!')
+    //   }
+    // }).catch(function (error) {
+    //   console.log('Error getting document:', error)
+    // })
+    var ref = db.collection('product').doc()
+    var id = ref.id
+    ref.set(payload)
       .then(function () {
+        console.log('id' + id)
         console.log('Add new product ! ' + JSON.stringify(payload))
       })
       .catch(function (error) {
         console.error('Error writing document: ' + JSON.stringify(payload), error)
       })
+
+    // db.collection('product').doc().set(payload)
+    //   .then(function () {
+    //     console.log('Add new product ! ' + JSON.stringify(payload))
+    //   })
+    //   .catch(function (error) {
+    //     console.error('Error writing document: ' + JSON.stringify(payload), error)
+    //   })
   },
   allProducts ({commit}) {
     console.log('ALL_PRODUCTS')
@@ -36,7 +48,11 @@ export const productActions = {
     db.collection('product').get()
       .then(function (e) {
         e.forEach(function (doc) {
+          console.log('doc.data()')
           console.log(doc.data())
+          console.log('id= ' + doc.id)
+          var obj = doc.data()
+          obj['id'] = doc.id
           data.push(doc.data())
         })
         commit(ALL_PRODUCTS_SUCCESS, data)

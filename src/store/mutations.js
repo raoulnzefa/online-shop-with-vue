@@ -4,6 +4,7 @@
 
 import {
   ADD_PRODUCT,
+  ADD_PRODUCT_SUCCESS,
   PRODUCT_BY_ID,
   ALL_PRODUCTS,
   ALL_PRODUCTS_SUCCESS
@@ -24,5 +25,9 @@ export const productMutations = {
   },
   [ADD_PRODUCT]: (state, payload) => {
     state.showLoader = true
+  },
+  [ADD_PRODUCT_SUCCESS]: (state, payload) => {
+    state.showLoader = false
+    state.products.push(payload)
   }
 }
