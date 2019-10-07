@@ -15,6 +15,7 @@ import ProductItem from './ProductItem.vue'
 export default {
   name: 'product-list',
   created () {
+    console.log('created')
     if (this.products.length === 0) {
       this.$store.dispatch('allProducts')
     }
@@ -26,6 +27,7 @@ export default {
   },
   data () {
     return {
+
     }
   },
   components: {

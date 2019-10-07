@@ -6,11 +6,7 @@ import Home from '@/pages/Home'
 import Cart from '@/pages/Cart'
 // import Admin from '@/pages/Admin'
 
-// Admin Components
-import Index from '@/pages/admin/Index'
-import New from '@/pages/admin/New'
-import Products from '@/pages/admin/Products'
-import Edit from '@/pages/admin/Edit'
+import AdminRoutes from './admin'
 
 Vue.use(Router)
 
@@ -22,34 +18,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/admin',
-      name: 'Admin',
-      // Parent routes still has a component
-      component: Index,
-
-      // Child routes
-      children: [
-        {
-          path: 'new',
-          name: 'New',
-          component: New
-        },
-        {
-          path: '',
-          name: 'Products',
-          component: Products
-        },
-        {
-          path: 'edit/:id',
-          name: 'Edit',
-          component: Edit
-        }
-      ]
-    },
-    {
       path: '/cart',
       name: 'Cart',
       component: Cart
-    }
+    }, AdminRoutes
   ]
 })
